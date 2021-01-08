@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #accessing }
+Counter class >> startingAt: anInteger [
+^ self new count: anInteger 
+]
+
+{ #category : #accessing }
 Counter >> count [
 	^ count
 ]
@@ -30,4 +35,19 @@ Counter >> decrement2 [
 { #category : #'as yet unclassified' }
 Counter >> increment [
 	count := count + 1
+]
+
+{ #category : #initialization }
+Counter >> initialize [
+
+	super initialize.
+	count := 0
+]
+
+{ #category : #initialization }
+Counter >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: ' withValue: ' , count printString.
+	aStream cr
 ]
