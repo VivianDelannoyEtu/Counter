@@ -1,4 +1,4 @@
-## L3S6 Meta — Dépôt modèle
+## L3S6 Meta — Counter
 
 - session: janvier-février 2021
-- étudiant(e): Prenom NOM
+- étudiant: Vivian Delannoy 
