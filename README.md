@@ -1,4 +1,4 @@
-## L3S6 Meta — Counter
+## L3S6 Meta 
 
-- session: janvier-février 2021
+- session: 2021
 - étudiant: Vivian Delannoy 
