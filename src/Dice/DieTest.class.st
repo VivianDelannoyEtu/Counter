@@ -14,6 +14,17 @@ DieTest >> testAddTwoDice [
 	self assert: hd dice size = 2.
 ]
 
+{ #category : #tests }
+DieTest >> testAddingADieAndHandle [ 
+	| hd |
+	hd := (Die new) 
+		+
+		(DieHandle new 
+			addDie: 6;
+			yourself).
+	self assert: hd dice size equals:2
+]
+
 { #category : #'as yet unclassified' }
 DieTest >> testCreationOk [
 	self assert: (Die withFaces: 20) faces equals: 20

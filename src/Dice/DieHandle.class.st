@@ -8,12 +8,18 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-DieHandle >> + aDieHandle [
-	| handle |
-	handle := self class new.
-	self dice do: [ :each | handle addDie: each ].
-	aDieHandle  dice do: [ :each | handle addDie: each ].
-	^ handle
+DieHandle >> + aDieOrADieHandle [
+	^ 	(aDieOrADieHandle class = DieHandle)
+		ifTrue: [ | handle |
+				handle := self class new.
+				self dice do: [ :each | handle addDie: each  ].
+				aDieOrADieHandle dice do: [ :each | handle addDie: each ].
+				handle ]
+		ifFalse: [ | handle |
+				handle := self class new.
+				self dice do: [ :each | handle addDie: each  ].
+				handle addDie: aDieOrADieHandle.
+				handle ]
 ]
 
 { #category : #adding }
@@ -46,10 +52,19 @@ DieHandle >> roll [
 ]
 
 { #category : #'as yet unclassified' }
+DieHandle >> sumWithDie: aDie [ 
+	| handle |
+	handle := self class new.
+		self dice do: [ :each | handle addDie: each ].
+		handle addDie: aDie.
+		^ handle
+]
+
+{ #category : #'as yet unclassified' }
 DieHandle >> sumWithHandle: aDieHandle [
 	| handle |
 	handle := self class new.
-	self dices do: [ :each | handle addDie: each].
- 	aDieHandle dices do: [ :each | handle addDie: each ].
+	self dice do: [ :each | handle addDie: each].
+ 	aDieHandle dice do: [ :each | handle addDie: each ].
 	^ handle
 ]
