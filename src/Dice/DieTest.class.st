@@ -7,6 +7,13 @@ Class {
 	#category : #Dice
 }
 
+{ #category : #tests }
+DieTest >> testAddTwoDice [
+	| hd |
+	hd := (Die new) + (Die new).
+	self assert: hd dice size = 2.
+]
+
 { #category : #'as yet unclassified' }
 DieTest >> testCreationOk [
 	self assert: (Die withFaces: 20) faces equals: 20
