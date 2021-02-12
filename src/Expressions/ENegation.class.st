@@ -19,5 +19,17 @@ ENegation >> evaluate [
 
 { #category : #accessing }
 ENegation >> expression: anExpression [
-	expression := anExpression
+	expression := anExpression 
+]
+
+{ #category : #accessing }
+ENegation >> negated [
+	^ expression
+]
+
+{ #category : #accessing }
+ENegation >> printOn: aStream [
+	aStream nextPutAll: '- '.
+		expression printOn: aStream.
+		
 ]

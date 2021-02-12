@@ -29,3 +29,9 @@ EMultiplicationTest >> testEvaluateWithClassCreationMessage [
 	self assert: (EMultiplication left: ep1 right: ep2 )
 		evaluate equals: 15
 ]
+
+{ #category : #tests }
+EMultiplicationTest >> testPrinting [ 
+	self assert: (EMultiplication fiveTimesThree) negated printString 
+	equals: '- ( 5 * 3 )'
+]

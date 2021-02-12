@@ -1,5 +1,5 @@
 Class {
-	#name : #BinaryExpression,
+	#name : #EBinaryExpression,
 	#superclass : #EExpression,
 	#instVars : [
 		'operator',
@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #'public access' }
-BinaryExpression >> evaluate [ 
+EBinaryExpression >> evaluate [ 
 	operator := #+
 		ifTrue: [ left evaluate + right evaluate ]
 		ifFalse: [ left evaluate * right evaluate ]
