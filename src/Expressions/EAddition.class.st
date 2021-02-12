@@ -29,13 +29,8 @@ EAddition >> left: anExpression [
 ]
 
 { #category : #accessing }
-EAddition >> printOn: aStream [
-	aStream 
-		nextPutAll: '( ';
-		nextPutAll: left printString;
-		nextPutAll: ' + ';
-		nextPutAll: right printString;
-		nextPutAll: ' )'.
+EAddition >> operatorString [
+	^ ' + '
 ]
 
 { #category : #accessing }

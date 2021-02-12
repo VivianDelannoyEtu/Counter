@@ -29,13 +29,8 @@ EMultiplication >> left: anExpression [
 ]
 
 { #category : #accessing }
-EMultiplication >> printOn: aStream [
-	aStream 
-		nextPutAll: '( ';
-		nextPutAll: left printString;
-		nextPutAll: ' * ';
-		nextPutAll: right printString;
-		nextPutAll: ' )'.
+EMultiplication >> operatorString [
+	^ ' * '
 ]
 
 { #category : #accessing }

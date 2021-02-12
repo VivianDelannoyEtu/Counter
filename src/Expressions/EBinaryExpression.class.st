@@ -15,3 +15,17 @@ EBinaryExpression >> evaluate [
 		ifTrue: [ left evaluate + right evaluate ]
 		ifFalse: [ left evaluate * right evaluate ]
 ]
+
+{ #category : #'public access' }
+EBinaryExpression >> operatorString [
+	^ self subclassResponsibility 
+]
+
+{ #category : #'public access' }
+EBinaryExpression >> printOn: aStream [
+	aStream nextPutAll: '( '.
+	left printOn: aStream.
+	aStream nextPutAll: self operatorString.
+	right printOn: aStream.
+	aStream nextPutAll: ' )'.
+]
