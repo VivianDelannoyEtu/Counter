@@ -24,6 +24,11 @@ EAddition >> evaluate [
 ]
 
 { #category : #accessing }
+EAddition >> evaluateWith: anObject [ 
+	^ (right evaluateWith: anObject) + (left evaluateWith: anObject ) 
+]
+
+{ #category : #accessing }
 EAddition >> left: anExpression [ 
 	left := anExpression 
 ]

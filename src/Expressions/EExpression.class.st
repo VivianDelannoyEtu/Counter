@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #accessing }
+EExpression >> evaluateWith: aDictionary [ 
+	^ self evaluate
+]
+
+{ #category : #accessing }
 EExpression >> negated [
 	^ ENegation new expression: self
 ]
